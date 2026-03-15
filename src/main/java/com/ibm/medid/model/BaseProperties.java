@@ -21,11 +21,14 @@ public abstract class BaseProperties {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "created_at",updatable = false)
-    @CreationTimestamp  
+    @Column(name = "created_at", updatable = false)
+    @CreationTimestamp
     private Instant createdAt;
 
     @Column(name = "updated_at")
     @UpdateTimestamp
     private Instant updatedAt;
+
+    @Column(name = "is_delete")
+    private Boolean isDelete = false;
 }
